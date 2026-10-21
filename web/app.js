@@ -222,7 +222,17 @@ function render() {
     );
   }
 
+  $('#mascot-phrase').textContent = mascotPhrase(entries.length, progress);
   $('#empty-state').hidden = entries.length > 0;
+}
+
+/** Реплика капибары в зависимости от того, сколько съедено. */
+function mascotPhrase(count, progress) {
+  if (count === 0) return 'Привет! Что сегодня было вкусного?';
+  if (progress < 0.5) return 'Хорошее начало. Капибара одобряет!';
+  if (progress < 0.9) return 'Уже больше половины. Так держать!';
+  if (progress <= 1) return 'Норма набрана — капибара довольна 🍊';
+  return 'Перебор! Капибара советует прогуляться.';
 }
 
 $('#prev-day').addEventListener('click', () => { selectedDate = addDays(selectedDate, -1); render(); });

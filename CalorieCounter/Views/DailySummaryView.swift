@@ -19,6 +19,10 @@ struct DailySummaryView: View {
                         .frame(maxWidth: .infinity)
                         .padding(.vertical, 8)
                     MacrosRow(totals: totals)
+                    MascotView(
+                        hasEntries: !store.entries(on: selectedDate).isEmpty,
+                        progress: calorieGoal > 0 ? totals.calories / Double(calorieGoal) : 0
+                    )
                 }
 
                 ForEach(MealType.allCases) { meal in
@@ -39,11 +43,17 @@ struct DailySummaryView: View {
 
                 if store.entries(on: selectedDate).isEmpty {
                     Section {
-                        ContentUnavailableView(
-                            "Пока пусто",
-                            systemImage: "fork.knife",
-                            description: Text("Нажмите «+», чтобы добавить продукт")
-                        )
+                        ContentUnavailableView {
+                            VStack(spacing: 8) {
+                                Image("Capybara")
+                                    .resizable()
+                                    .scaledToFit()
+                                    .frame(width: 140)
+                                Text("Пока пусто")
+                            }
+                        } description: {
+                            Text("Нажмите «+», чтобы добавить продукт")
+                        }
                     }
                 }
             }
@@ -154,6 +164,38 @@ private struct MacrosRow: View {
                 .foregroundStyle(.secondary)
         }
         .frame(maxWidth: .infinity)
+    }
+}
+
+/// Капибара-талисман с репликой в зависимости от того, сколько съедено.
+private struct MascotView: View {
+    let hasEntries: Bool
+    let progress: Double
+
+    private var phrase: String {
+        guard hasEntries else { return "Привет! Что сегодня было вкусного?" }
+        switch progress {
+        case ..<0.5: return "Хорошее начало. Капибара одобряет!"
+        case ..<0.9: return "Уже больше половины. Так держать!"
+        case ...1: return "Норма набрана — капибара довольна 🍊"
+        default: return "Перебор! Капибара советует прогуляться."
+        }
+    }
+
+    var body: some View {
+        HStack(spacing: 12) {
+            Image("Capybara")
+                .resizable()
+                .scaledToFit()
+                .frame(width: 88)
+                .accessibilityHidden(true)
+            Text(phrase)
+                .font(.subheadline)
+                .padding(.horizontal, 12)
+                .padding(.vertical, 8)
+                .background(Color(.secondarySystemBackground), in: RoundedRectangle(cornerRadius: 14))
+                .frame(maxWidth: .infinity, alignment: .leading)
+        }
     }
 }
 

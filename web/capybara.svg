@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 170" role="img" aria-label="Капибара">
+  <!-- Задние лапы и тело -->
+  <rect x="150" y="122" width="22" height="34" rx="11" fill="#7d5434"/>
+  <rect x="96" y="126" width="22" height="30" rx="11" fill="#7d5434"/>
+  <ellipse cx="140" cy="108" rx="68" ry="44" fill="#a8774b"/>
+  <ellipse cx="146" cy="96" rx="48" ry="22" fill="#b98a5c" opacity="0.6"/>
+  <!-- Передние лапы -->
+  <rect x="166" y="126" width="22" height="32" rx="11" fill="#8f6240"/>
+  <rect x="110" y="128" width="22" height="30" rx="11" fill="#8f6240"/>
+  <!-- Голова -->
+  <rect x="18" y="52" width="112" height="74" rx="36" fill="#b07f52"/>
+  <!-- Ухо -->
+  <ellipse cx="108" cy="54" rx="13" ry="10" fill="#7d5434"/>
+  <ellipse cx="108" cy="55" rx="7" ry="5" fill="#5e3d24"/>
+  <!-- Морда -->
+  <rect x="14" y="82" width="58" height="44" rx="22" fill="#9b6c44"/>
+  <ellipse cx="30" cy="94" rx="5" ry="3.5" fill="#3b2616"/>
+  <ellipse cx="48" cy="94" rx="5" ry="3.5" fill="#3b2616"/>
+  <path d="M30 110 q9 7 18 0" fill="none" stroke="#3b2616" stroke-width="3" stroke-linecap="round"/>
+  <!-- Глаз и румянец -->
+  <circle cx="80" cy="76" r="6" fill="#2b1d12"/>
+  <circle cx="82" cy="74" r="2" fill="#ffffff"/>
+  <ellipse cx="86" cy="98" rx="9" ry="5" fill="#e8907a" opacity="0.55"/>
+  <!-- Мандарин на голове -->
+  <circle cx="72" cy="42" r="16" fill="#ff9a1f"/>
+  <circle cx="67" cy="37" r="4" fill="#ffc06b"/>
+  <path d="M72 26 q3 -8 12 -8 q-2 9 -12 8z" fill="#3fa34d"/>
+</svg>

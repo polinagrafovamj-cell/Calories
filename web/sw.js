@@ -1,11 +1,12 @@
 // Service worker: кэширует файлы приложения, чтобы оно открывалось без интернета.
 // При изменении файлов увеличьте версию, чтобы пользователи получили обновление.
-const CACHE = 'calorie-counter-v1';
+const CACHE = 'calorie-counter-v2';
 const APP_SHELL = [
   './',
   'index.html',
   'styles.css',
   'app.js',
+  'capybara.svg',
   'manifest.webmanifest',
   'icons/icon-192.png',
   'icons/icon-512.png',
