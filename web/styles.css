@@ -262,14 +262,24 @@ dialog form { display: contents; }
 .link-button:disabled { color: var(--secondary); opacity: 0.6; cursor: default; }
 
 .search-link {
+  display: block;
   width: 100%;
   padding: 12px 16px;
   border: 0;
-  border-radius: 12px;
   background: var(--card);
   color: var(--accent);
   text-align: left;
   cursor: pointer;
+}
+.group + .hint { margin-top: -14px; }
+.group > .search-link + .search-link { border-top: 1px solid var(--separator); }
+#photo-preview {
+  display: block;
+  width: 100%;
+  max-height: 280px;
+  margin-bottom: 16px;
+  border-radius: 12px;
+  object-fit: cover;
 }
 .hint { margin: 6px 16px 20px; color: var(--secondary); font-size: 13px; }
 

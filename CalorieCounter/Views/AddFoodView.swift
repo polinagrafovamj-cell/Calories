@@ -1,3 +1,4 @@
+import PhotosUI
 import SwiftUI
 
 struct AddFoodView: View {
@@ -13,6 +14,13 @@ struct AddFoodView: View {
     @State private var protein = ""
     @State private var fat = ""
     @State private var carbs = ""
+
+    @State private var searchQuery: String?
+    @State private var photoItem: PhotosPickerItem?
+    @State private var pickedPhoto: PickedPhoto?
+    @State private var capturedImage: UIImage?
+    @State private var isShowingCamera = false
+    @State private var pendingSearch: String?
 
     @FocusState private var focusedField: Field?
 
@@ -40,18 +48,7 @@ struct AddFoodView: View {
     var body: some View {
         NavigationStack {
             Form {
-                Section {
-                    NavigationLink {
-                        ProductSearchView { product in
-                            apply(name: product.name, calories: product.calories,
-                                  protein: product.protein, fat: product.fat, carbs: product.carbs)
-                        }
-                    } label: {
-                        Label("Найти в базе продуктов", systemImage: "magnifyingglass")
-                    }
-                } footer: {
-                    Text("Поиск по открытой базе Open Food Facts")
-                }
+                lookupSection
 
                 Section("Продукт") {
                     TextField("Название", text: $name)
@@ -112,6 +109,62 @@ struct AddFoodView: View {
                 }
             }
             .onAppear { if name.isEmpty { focusedField = .name } }
+            .navigationDestination(item: $searchQuery) { query in
+                ProductSearchView(initialQuery: query) { product in
+                    apply(name: product.name, calories: product.calories,
+                          protein: product.protein, fat: product.fat, carbs: product.carbs)
+                }
+            }
+            .onChange(of: photoItem) { _, item in
+                Task { await loadPhoto(item) }
+            }
+            .fullScreenCover(isPresented: $isShowingCamera, onDismiss: {
+                if let capturedImage { pickedPhoto = PickedPhoto(image: capturedImage) }
+                capturedImage = nil
+            }) {
+                CameraPicker { capturedImage = $0 }
+                    .ignoresSafeArea()
+            }
+            .sheet(item: $pickedPhoto, onDismiss: {
+                // Переходим к поиску только после того, как окно с фото закрылось
+                if let pendingSearch { searchQuery = pendingSearch }
+                pendingSearch = nil
+            }) { photo in
+                PhotoRecognitionView(photo: photo) { food in
+                    apply(name: food.name, calories: food.calories, protein: food.protein,
+                          fat: food.fat, carbs: food.carbs, grams: food.portion)
+                } onSearch: { query in
+                    pendingSearch = query
+                }
+            }
+        }
+    }
+
+    /// Поиск по базе и распознавание по фото.
+    private var lookupSection: some View {
+        Section {
+            Button("Найти в базе продуктов", systemImage: "magnifyingglass") {
+                searchQuery = ""
+            }
+            if CameraPicker.isAvailable {
+                Button("Сфотографировать еду", systemImage: "camera") {
+                    isShowingCamera = true
+                }
+            }
+            PhotosPicker(selection: $photoItem, matching: .images) {
+                Label("Распознать по фото из галереи", systemImage: "photo.on.rectangle")
+            }
+        } footer: {
+            Text("Поиск по базе Open Food Facts или распознавание блюда на фото прямо на телефоне")
+        }
+    }
+
+    private func loadPhoto(_ item: PhotosPickerItem?) async {
+        guard let item else { return }
+        photoItem = nil // чтобы можно было выбрать то же фото ещё раз
+        if let data = try? await item.loadTransferable(type: Data.self),
+           let image = UIImage(data: data) {
+            pickedPhoto = PickedPhoto(image: image)
         }
     }
 
@@ -130,8 +183,10 @@ struct AddFoodView: View {
         }
     }
 
-    private func apply(name: String, calories: Double, protein: Double, fat: Double, carbs: Double) {
+    private func apply(name: String, calories: Double, protein: Double, fat: Double, carbs: Double,
+                       grams: Double? = nil) {
         self.name = name
+        if let grams { self.grams = Self.format(grams) }
         self.calories = Self.format(calories)
         self.protein = Self.format(protein)
         self.fat = Self.format(fat)

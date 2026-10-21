@@ -3,6 +3,7 @@ import SwiftUI
 /// Поиск продукта в базе Open Food Facts. Выбранный продукт передаётся в `onSelect`.
 struct ProductSearchView: View {
     var client = OpenFoodFactsClient()
+    var initialQuery = ""
     let onSelect: (FoodProduct) -> Void
 
     @Environment(\.dismiss) private var dismiss
@@ -30,6 +31,9 @@ struct ProductSearchView: View {
                         prompt: "Например, гречка или йогурт")
             .task(id: trimmedQuery) {
                 await search(trimmedQuery)
+            }
+            .onAppear {
+                if query.isEmpty { query = initialQuery }
             }
     }
 

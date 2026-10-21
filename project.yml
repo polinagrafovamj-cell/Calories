@@ -12,7 +12,11 @@ targets:
   CalorieCounter:
     type: application
     platform: iOS
-    sources: [CalorieCounter]
+    sources:
+      - CalorieCounter
+      # Таблица распознаваемых продуктов — общая с веб-версией
+      - path: web/recognized-foods.json
+        buildPhase: resources
     scheme: {}
     settings:
       base:
@@ -22,3 +26,4 @@ targets:
         INFOPLIST_KEY_UILaunchScreen_Generation: YES
         INFOPLIST_KEY_UISupportedInterfaceOrientations: UIInterfaceOrientationPortrait
         TARGETED_DEVICE_FAMILY: "1"
+        INFOPLIST_KEY_NSCameraUsageDescription: Камера нужна, чтобы сфотографировать еду и распознать её.

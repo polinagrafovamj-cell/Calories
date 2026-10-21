@@ -282,9 +282,10 @@ function updatePreview() {
   }
 }
 
-function fillForm(product) {
+function fillForm(product, grams) {
   const f = form.elements;
   f.name.value = product.name;
+  if (grams) f.grams.value = inputValue(grams);
   f.calories.value = inputValue(product.calories);
   f.protein.value = inputValue(product.protein);
   f.fat.value = inputValue(product.fat);
@@ -428,11 +429,95 @@ function pickProduct(product) {
   fillForm(product);
 }
 
-searchInput.addEventListener('input', () => scheduleSearch());
-$('#open-search').addEventListener('click', () => {
+function openSearch(query) {
+  if (query !== undefined) searchInput.value = query;
   searchDialog.showModal();
   scheduleSearch(0);
   searchInput.focus();
+}
+
+searchInput.addEventListener('input', () => scheduleSearch());
+$('#open-search').addEventListener('click', () => openSearch());
+
+// ---------- Распознавание по фото ----------
+
+const photoDialog = $('#photo-dialog');
+const photoInput = $('#photo-input');
+const photoPreview = $('#photo-preview');
+const photoStatus = $('#photo-status');
+const photoResults = $('#photo-results');
+let photoGuess = '';
+
+function showPhotoStatus(...content) {
+  photoResults.replaceChildren();
+  photoStatus.replaceChildren(...content);
+}
+
+async function recognizePhoto(file) {
+  URL.revokeObjectURL(photoPreview.src);
+  photoPreview.src = URL.createObjectURL(file);
+  photoGuess = '';
+  showPhotoStatus('Открываем фото…');
+  if (!photoDialog.open) photoDialog.showModal();
+
+  try {
+    await photoPreview.decode();
+  } catch {
+    showPhotoStatus('Не удалось открыть это изображение. Попробуйте другое фото.');
+    return;
+  }
+
+  showPhotoStatus('Загружаем модель… В первый раз это может занять до минуты.');
+  try {
+    await FoodRecognizer.load();
+    showPhotoStatus('Распознаём…');
+    const results = await FoodRecognizer.recognize(photoPreview);
+
+    if (results.length === 0) {
+      showPhotoStatus('Не удалось узнать блюдо. Модель знает около 50 типовых блюд и продуктов — ' +
+        'попробуйте снять ближе или найдите продукт в базе.');
+      return;
+    }
+
+    photoGuess = results[0].food.name;
+    photoStatus.replaceChildren();
+    photoResults.replaceChildren(...results.map(({ food, probability }) => {
+      const row = foodRow({
+        name: food.name,
+        subtitle: [`Похоже на ${Math.round(probability * 100)}% · порция ~${food.portion} г`, macrosLine(food)],
+        calories: food.calories,
+        unit: 'ккал/100 г',
+      });
+      row.tabIndex = 0;
+      const pick = () => {
+        photoDialog.close();
+        fillForm(food, food.portion);
+      };
+      row.addEventListener('click', pick);
+      row.addEventListener('keydown', (e) => { if (e.key === 'Enter') pick(); });
+      return row;
+    }));
+  } catch (error) {
+    console.error(error);
+    showPhotoStatus(
+      el('div', {}, navigator.onLine
+        ? `Не удалось распознать: ${error.message}`
+        : 'Для первого распознавания нужен интернет, чтобы скачать модель'),
+      el('button', { type: 'button', className: 'link-button strong', onclick: () => recognizePhoto(file) }, 'Повторить'),
+    );
+  }
+}
+
+$('#open-photo').addEventListener('click', () => photoInput.click());
+$('#photo-retake').addEventListener('click', () => photoInput.click());
+photoInput.addEventListener('change', () => {
+  const [file] = photoInput.files;
+  photoInput.value = ''; // чтобы можно было выбрать тот же файл ещё раз
+  if (file) recognizePhoto(file);
+});
+$('#photo-search').addEventListener('click', () => {
+  photoDialog.close();
+  openSearch(photoGuess);
 });
 
 // ---------- Цель ----------

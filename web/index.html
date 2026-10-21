@@ -11,6 +11,7 @@
   <link rel="icon" href="icons/icon-192.png" type="image/png">
   <link rel="apple-touch-icon" href="icons/icon-192.png">
   <link rel="stylesheet" href="styles.css">
+  <script src="food-recognition.js" defer></script>
   <script src="app.js" defer></script>
 </head>
 <body>
@@ -71,8 +72,12 @@
       </header>
 
       <div class="dialog-body">
-        <button type="button" class="search-link" id="open-search">🔍 Найти в базе продуктов</button>
-        <p class="hint">Поиск по открытой базе Open Food Facts</p>
+        <div class="group">
+          <button type="button" class="search-link" id="open-search">🔍 Найти в базе продуктов</button>
+          <button type="button" class="search-link" id="open-photo">📷 Распознать по фото</button>
+        </div>
+        <input type="file" id="photo-input" accept="image/*" hidden>
+        <p class="hint">Поиск по базе Open Food Facts или распознавание блюда на фото</p>
 
         <h3>Продукт</h3>
         <div class="group">
@@ -111,6 +116,26 @@
       <input type="search" id="search-input" placeholder="Например, гречка или йогурт" autocomplete="off">
       <div id="search-status" class="status"></div>
       <ul id="search-results" class="group list"></ul>
+    </div>
+  </dialog>
+
+  <!-- Распознавание по фото -->
+  <dialog id="photo-dialog">
+    <header class="dialog-header">
+      <button type="button" class="link-button" data-close>‹ Назад</button>
+      <h2>Что на фото?</h2>
+      <span></span>
+    </header>
+    <div class="dialog-body">
+      <img id="photo-preview" alt="Выбранное фото">
+      <div id="photo-status" class="status"></div>
+      <ul id="photo-results" class="group list"></ul>
+      <div class="group">
+        <button type="button" class="search-link" id="photo-search">🔍 Найти в базе продуктов</button>
+        <button type="button" class="search-link" id="photo-retake">📷 Выбрать другое фото</button>
+      </div>
+      <p class="hint">Фото обрабатывается прямо на устройстве и никуда не отправляется.
+        Калории указаны примерно — проверьте их и вес порции.</p>
     </div>
   </dialog>
 

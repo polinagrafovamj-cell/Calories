@@ -1,0 +1,1123 @@
+{
+ "_comment": "Продукты, которые распознаются по фото. КБЖУ на 100 г, portion — типичная порция в граммах. imagenet — индексы классов модели MobileNet (веб), vision — идентификаторы Apple Vision (iOS).",
+ "foods": [
+  {
+   "id": "pizza",
+   "name": "Пицца",
+   "calories": 266,
+   "protein": 11,
+   "fat": 10,
+   "carbs": 33,
+   "portion": 250,
+   "imagenet": [
+    963
+   ],
+   "vision": [
+    "pizza"
+   ]
+  },
+  {
+   "id": "burger",
+   "name": "Чизбургер",
+   "calories": 263,
+   "protein": 13,
+   "fat": 12,
+   "carbs": 26,
+   "portion": 200,
+   "imagenet": [
+    933
+   ],
+   "vision": [
+    "burger",
+    "hamburger",
+    "cheeseburger"
+   ]
+  },
+  {
+   "id": "hotdog",
+   "name": "Хот-дог",
+   "calories": 290,
+   "protein": 10,
+   "fat": 17,
+   "carbs": 24,
+   "portion": 150,
+   "imagenet": [
+    934
+   ],
+   "vision": [
+    "hotdog",
+    "hot_dog"
+   ]
+  },
+  {
+   "id": "burrito",
+   "name": "Буррито",
+   "calories": 206,
+   "protein": 8,
+   "fat": 7,
+   "carbs": 27,
+   "portion": 250,
+   "imagenet": [
+    965
+   ],
+   "vision": [
+    "burrito",
+    "wrap"
+   ]
+  },
+  {
+   "id": "taco",
+   "name": "Тако",
+   "calories": 226,
+   "protein": 9,
+   "fat": 12,
+   "carbs": 20,
+   "portion": 100,
+   "imagenet": [],
+   "vision": [
+    "taco"
+   ]
+  },
+  {
+   "id": "sandwich",
+   "name": "Бутерброд",
+   "calories": 250,
+   "protein": 11,
+   "fat": 10,
+   "carbs": 28,
+   "portion": 150,
+   "imagenet": [],
+   "vision": [
+    "sandwich"
+   ]
+  },
+  {
+   "id": "bread",
+   "name": "Хлеб",
+   "calories": 265,
+   "protein": 9,
+   "fat": 3.2,
+   "carbs": 49,
+   "portion": 50,
+   "imagenet": [
+    930
+   ],
+   "vision": [
+    "bread",
+    "baguette",
+    "toast"
+   ]
+  },
+  {
+   "id": "bagel",
+   "name": "Бейгл",
+   "calories": 257,
+   "protein": 10,
+   "fat": 1.6,
+   "carbs": 50,
+   "portion": 100,
+   "imagenet": [
+    931
+   ],
+   "vision": [
+    "bagel"
+   ]
+  },
+  {
+   "id": "pretzel",
+   "name": "Крендель",
+   "calories": 338,
+   "protein": 9,
+   "fat": 3.5,
+   "carbs": 70,
+   "portion": 60,
+   "imagenet": [
+    932
+   ],
+   "vision": [
+    "pretzel"
+   ]
+  },
+  {
+   "id": "croissant",
+   "name": "Круассан",
+   "calories": 406,
+   "protein": 8,
+   "fat": 21,
+   "carbs": 45,
+   "portion": 60,
+   "imagenet": [],
+   "vision": [
+    "croissant"
+   ]
+  },
+  {
+   "id": "pancake",
+   "name": "Блины",
+   "calories": 230,
+   "protein": 6,
+   "fat": 9,
+   "carbs": 30,
+   "portion": 150,
+   "imagenet": [],
+   "vision": [
+    "pancake",
+    "crepe"
+   ]
+  },
+  {
+   "id": "waffle",
+   "name": "Вафли",
+   "calories": 291,
+   "protein": 8,
+   "fat": 14,
+   "carbs": 33,
+   "portion": 75,
+   "imagenet": [],
+   "vision": [
+    "waffle"
+   ]
+  },
+  {
+   "id": "mashed_potato",
+   "name": "Картофельное пюре",
+   "calories": 88,
+   "protein": 2,
+   "fat": 3.3,
+   "carbs": 13,
+   "portion": 200,
+   "imagenet": [
+    935
+   ],
+   "vision": [
+    "mashed_potatoes"
+   ]
+  },
+  {
+   "id": "potato",
+   "name": "Картофель отварной",
+   "calories": 82,
+   "protein": 2,
+   "fat": 0.4,
+   "carbs": 17,
+   "portion": 200,
+   "imagenet": [],
+   "vision": [
+    "potato"
+   ]
+  },
+  {
+   "id": "fries",
+   "name": "Картофель фри",
+   "calories": 312,
+   "protein": 3.4,
+   "fat": 15,
+   "carbs": 41,
+   "portion": 150,
+   "imagenet": [],
+   "vision": [
+    "french_fries",
+    "fries"
+   ]
+  },
+  {
+   "id": "pasta",
+   "name": "Паста",
+   "calories": 158,
+   "protein": 5.8,
+   "fat": 0.9,
+   "carbs": 31,
+   "portion": 250,
+   "imagenet": [],
+   "vision": [
+    "pasta",
+    "spaghetti"
+   ]
+  },
+  {
+   "id": "carbonara",
+   "name": "Паста карбонара",
+   "calories": 190,
+   "protein": 8,
+   "fat": 9,
+   "carbs": 20,
+   "portion": 300,
+   "imagenet": [
+    959
+   ],
+   "vision": [
+    "carbonara"
+   ]
+  },
+  {
+   "id": "noodles",
+   "name": "Лапша",
+   "calories": 138,
+   "protein": 4.5,
+   "fat": 2,
+   "carbs": 25,
+   "portion": 250,
+   "imagenet": [],
+   "vision": [
+    "noodles",
+    "ramen"
+   ]
+  },
+  {
+   "id": "rice",
+   "name": "Рис",
+   "calories": 130,
+   "protein": 2.7,
+   "fat": 0.3,
+   "carbs": 28,
+   "portion": 180,
+   "imagenet": [],
+   "vision": [
+    "rice"
+   ]
+  },
+  {
+   "id": "sushi",
+   "name": "Суши",
+   "calories": 150,
+   "protein": 6,
+   "fat": 1,
+   "carbs": 29,
+   "portion": 200,
+   "imagenet": [],
+   "vision": [
+    "sushi",
+    "sashimi"
+   ]
+  },
+  {
+   "id": "dumplings",
+   "name": "Пельмени",
+   "calories": 250,
+   "protein": 11,
+   "fat": 12,
+   "carbs": 24,
+   "portion": 200,
+   "imagenet": [],
+   "vision": [
+    "dumpling",
+    "dumplings"
+   ]
+  },
+  {
+   "id": "soup",
+   "name": "Суп",
+   "calories": 50,
+   "protein": 2.5,
+   "fat": 2,
+   "carbs": 5,
+   "portion": 300,
+   "imagenet": [
+    925,
+    926
+   ],
+   "vision": [
+    "soup",
+    "broth",
+    "stew"
+   ]
+  },
+  {
+   "id": "salad",
+   "name": "Овощной салат",
+   "calories": 40,
+   "protein": 1.5,
+   "fat": 2,
+   "carbs": 4,
+   "portion": 200,
+   "imagenet": [],
+   "vision": [
+    "salad"
+   ]
+  },
+  {
+   "id": "meatloaf",
+   "name": "Мясной рулет",
+   "calories": 220,
+   "protein": 15,
+   "fat": 14,
+   "carbs": 8,
+   "portion": 200,
+   "imagenet": [
+    962
+   ],
+   "vision": [
+    "meatloaf"
+   ]
+  },
+  {
+   "id": "steak",
+   "name": "Стейк",
+   "calories": 271,
+   "protein": 25,
+   "fat": 19,
+   "carbs": 0,
+   "portion": 200,
+   "imagenet": [],
+   "vision": [
+    "steak",
+    "meat",
+    "beef"
+   ]
+  },
+  {
+   "id": "chicken",
+   "name": "Курица",
+   "calories": 190,
+   "protein": 27,
+   "fat": 9,
+   "carbs": 0,
+   "portion": 200,
+   "imagenet": [],
+   "vision": [
+    "chicken",
+    "poultry"
+   ]
+  },
+  {
+   "id": "fish",
+   "name": "Рыба",
+   "calories": 150,
+   "protein": 20,
+   "fat": 7,
+   "carbs": 0,
+   "portion": 150,
+   "imagenet": [],
+   "vision": [
+    "fish",
+    "salmon"
+   ]
+  },
+  {
+   "id": "shrimp",
+   "name": "Креветки",
+   "calories": 99,
+   "protein": 24,
+   "fat": 0.3,
+   "carbs": 0.2,
+   "portion": 100,
+   "imagenet": [],
+   "vision": [
+    "shrimp",
+    "prawn"
+   ]
+  },
+  {
+   "id": "egg",
+   "name": "Яйцо",
+   "calories": 155,
+   "protein": 13,
+   "fat": 11,
+   "carbs": 1.1,
+   "portion": 55,
+   "imagenet": [],
+   "vision": [
+    "egg",
+    "eggs",
+    "fried_egg"
+   ]
+  },
+  {
+   "id": "cheese",
+   "name": "Сыр",
+   "calories": 350,
+   "protein": 24,
+   "fat": 27,
+   "carbs": 1,
+   "portion": 30,
+   "imagenet": [],
+   "vision": [
+    "cheese"
+   ]
+  },
+  {
+   "id": "potpie",
+   "name": "Пирог с начинкой",
+   "calories": 245,
+   "protein": 7,
+   "fat": 13,
+   "carbs": 25,
+   "portion": 200,
+   "imagenet": [
+    964
+   ],
+   "vision": [
+    "pie"
+   ]
+  },
+  {
+   "id": "cake",
+   "name": "Торт",
+   "calories": 370,
+   "protein": 4,
+   "fat": 18,
+   "carbs": 50,
+   "portion": 100,
+   "imagenet": [],
+   "vision": [
+    "cake",
+    "birthday_cake"
+   ]
+  },
+  {
+   "id": "cupcake",
+   "name": "Капкейк",
+   "calories": 305,
+   "protein": 3.5,
+   "fat": 12,
+   "carbs": 46,
+   "portion": 70,
+   "imagenet": [],
+   "vision": [
+    "cupcake",
+    "muffin"
+   ]
+  },
+  {
+   "id": "cookie",
+   "name": "Печенье",
+   "calories": 450,
+   "protein": 6,
+   "fat": 20,
+   "carbs": 62,
+   "portion": 30,
+   "imagenet": [],
+   "vision": [
+    "cookie",
+    "cookies"
+   ]
+  },
+  {
+   "id": "donut",
+   "name": "Пончик",
+   "calories": 450,
+   "protein": 5,
+   "fat": 25,
+   "carbs": 50,
+   "portion": 60,
+   "imagenet": [],
+   "vision": [
+    "donut",
+    "doughnut"
+   ]
+  },
+  {
+   "id": "trifle",
+   "name": "Десерт",
+   "calories": 160,
+   "protein": 3,
+   "fat": 6,
+   "carbs": 23,
+   "portion": 150,
+   "imagenet": [
+    927
+   ],
+   "vision": [
+    "dessert",
+    "pudding",
+    "parfait"
+   ]
+  },
+  {
+   "id": "ice_cream",
+   "name": "Мороженое",
+   "calories": 207,
+   "protein": 3.5,
+   "fat": 11,
+   "carbs": 24,
+   "portion": 100,
+   "imagenet": [
+    928,
+    929
+   ],
+   "vision": [
+    "ice_cream",
+    "popsicle",
+    "frozen_dessert"
+   ]
+  },
+  {
+   "id": "chocolate",
+   "name": "Шоколад",
+   "calories": 546,
+   "protein": 5,
+   "fat": 31,
+   "carbs": 61,
+   "portion": 30,
+   "imagenet": [
+    960
+   ],
+   "vision": [
+    "chocolate",
+    "candy"
+   ]
+  },
+  {
+   "id": "guacamole",
+   "name": "Гуакамоле",
+   "calories": 157,
+   "protein": 2,
+   "fat": 14,
+   "carbs": 8.5,
+   "portion": 50,
+   "imagenet": [
+    924
+   ],
+   "vision": [
+    "guacamole"
+   ]
+  },
+  {
+   "id": "broccoli",
+   "name": "Брокколи",
+   "calories": 34,
+   "protein": 2.8,
+   "fat": 0.4,
+   "carbs": 6.6,
+   "portion": 150,
+   "imagenet": [
+    937
+   ],
+   "vision": [
+    "broccoli"
+   ]
+  },
+  {
+   "id": "cauliflower",
+   "name": "Цветная капуста",
+   "calories": 25,
+   "protein": 1.9,
+   "fat": 0.3,
+   "carbs": 5,
+   "portion": 150,
+   "imagenet": [
+    938
+   ],
+   "vision": [
+    "cauliflower"
+   ]
+  },
+  {
+   "id": "cabbage",
+   "name": "Капуста",
+   "calories": 27,
+   "protein": 1.8,
+   "fat": 0.1,
+   "carbs": 4.7,
+   "portion": 100,
+   "imagenet": [
+    936
+   ],
+   "vision": [
+    "cabbage"
+   ]
+  },
+  {
+   "id": "zucchini",
+   "name": "Кабачок",
+   "calories": 24,
+   "protein": 0.6,
+   "fat": 0.3,
+   "carbs": 4.6,
+   "portion": 150,
+   "imagenet": [
+    939
+   ],
+   "vision": [
+    "zucchini"
+   ]
+  },
+  {
+   "id": "pumpkin",
+   "name": "Тыква",
+   "calories": 26,
+   "protein": 1,
+   "fat": 0.1,
+   "carbs": 6.5,
+   "portion": 200,
+   "imagenet": [
+    940,
+    941,
+    942
+   ],
+   "vision": [
+    "squash",
+    "pumpkin"
+   ]
+  },
+  {
+   "id": "cucumber",
+   "name": "Огурец",
+   "calories": 15,
+   "protein": 0.8,
+   "fat": 0.1,
+   "carbs": 2.8,
+   "portion": 100,
+   "imagenet": [
+    943
+   ],
+   "vision": [
+    "cucumber"
+   ]
+  },
+  {
+   "id": "tomato",
+   "name": "Помидор",
+   "calories": 18,
+   "protein": 0.9,
+   "fat": 0.2,
+   "carbs": 3.9,
+   "portion": 120,
+   "imagenet": [],
+   "vision": [
+    "tomato"
+   ]
+  },
+  {
+   "id": "carrot",
+   "name": "Морковь",
+   "calories": 41,
+   "protein": 0.9,
+   "fat": 0.2,
+   "carbs": 10,
+   "portion": 80,
+   "imagenet": [],
+   "vision": [
+    "carrot"
+   ]
+  },
+  {
+   "id": "bell_pepper",
+   "name": "Болгарский перец",
+   "calories": 27,
+   "protein": 1.3,
+   "fat": 0.1,
+   "carbs": 5.3,
+   "portion": 120,
+   "imagenet": [
+    945
+   ],
+   "vision": [
+    "bell_pepper"
+   ]
+  },
+  {
+   "id": "artichoke",
+   "name": "Артишок",
+   "calories": 47,
+   "protein": 3.3,
+   "fat": 0.2,
+   "carbs": 10.5,
+   "portion": 120,
+   "imagenet": [
+    944
+   ],
+   "vision": [
+    "artichoke"
+   ]
+  },
+  {
+   "id": "mushroom",
+   "name": "Грибы",
+   "calories": 22,
+   "protein": 3.1,
+   "fat": 0.3,
+   "carbs": 3.3,
+   "portion": 100,
+   "imagenet": [
+    947,
+    992,
+    997,
+    996
+   ],
+   "vision": [
+    "mushroom"
+   ]
+  },
+  {
+   "id": "corn",
+   "name": "Кукуруза",
+   "calories": 96,
+   "protein": 3.4,
+   "fat": 1.5,
+   "carbs": 21,
+   "portion": 150,
+   "imagenet": [
+    987,
+    998
+   ],
+   "vision": [
+    "corn"
+   ]
+  },
+  {
+   "id": "avocado",
+   "name": "Авокадо",
+   "calories": 160,
+   "protein": 2,
+   "fat": 15,
+   "carbs": 9,
+   "portion": 100,
+   "imagenet": [],
+   "vision": [
+    "avocado"
+   ]
+  },
+  {
+   "id": "apple",
+   "name": "Яблоко",
+   "calories": 52,
+   "protein": 0.3,
+   "fat": 0.2,
+   "carbs": 14,
+   "portion": 180,
+   "imagenet": [
+    948
+   ],
+   "vision": [
+    "apple"
+   ]
+  },
+  {
+   "id": "pear",
+   "name": "Груша",
+   "calories": 57,
+   "protein": 0.4,
+   "fat": 0.1,
+   "carbs": 15,
+   "portion": 170,
+   "imagenet": [],
+   "vision": [
+    "pear"
+   ]
+  },
+  {
+   "id": "banana",
+   "name": "Банан",
+   "calories": 89,
+   "protein": 1.1,
+   "fat": 0.3,
+   "carbs": 23,
+   "portion": 120,
+   "imagenet": [
+    954
+   ],
+   "vision": [
+    "banana"
+   ]
+  },
+  {
+   "id": "orange",
+   "name": "Апельсин",
+   "calories": 47,
+   "protein": 0.9,
+   "fat": 0.1,
+   "carbs": 12,
+   "portion": 180,
+   "imagenet": [
+    950
+   ],
+   "vision": [
+    "orange",
+    "citrus_fruit",
+    "tangerine",
+    "mandarin"
+   ]
+  },
+  {
+   "id": "lemon",
+   "name": "Лимон",
+   "calories": 29,
+   "protein": 1.1,
+   "fat": 0.3,
+   "carbs": 9,
+   "portion": 60,
+   "imagenet": [
+    951
+   ],
+   "vision": [
+    "lemon",
+    "lime"
+   ]
+  },
+  {
+   "id": "strawberry",
+   "name": "Клубника",
+   "calories": 33,
+   "protein": 0.7,
+   "fat": 0.3,
+   "carbs": 7.7,
+   "portion": 150,
+   "imagenet": [
+    949
+   ],
+   "vision": [
+    "strawberry"
+   ]
+  },
+  {
+   "id": "blueberry",
+   "name": "Черника",
+   "calories": 57,
+   "protein": 0.7,
+   "fat": 0.3,
+   "carbs": 14,
+   "portion": 100,
+   "imagenet": [],
+   "vision": [
+    "blueberry",
+    "berry"
+   ]
+  },
+  {
+   "id": "cherry",
+   "name": "Вишня",
+   "calories": 50,
+   "protein": 1,
+   "fat": 0.3,
+   "carbs": 12,
+   "portion": 100,
+   "imagenet": [],
+   "vision": [
+    "cherry"
+   ]
+  },
+  {
+   "id": "grape",
+   "name": "Виноград",
+   "calories": 69,
+   "protein": 0.7,
+   "fat": 0.2,
+   "carbs": 18,
+   "portion": 150,
+   "imagenet": [],
+   "vision": [
+    "grape",
+    "grapes"
+   ]
+  },
+  {
+   "id": "peach",
+   "name": "Персик",
+   "calories": 39,
+   "protein": 0.9,
+   "fat": 0.3,
+   "carbs": 10,
+   "portion": 150,
+   "imagenet": [],
+   "vision": [
+    "peach",
+    "apricot"
+   ]
+  },
+  {
+   "id": "watermelon",
+   "name": "Арбуз",
+   "calories": 30,
+   "protein": 0.6,
+   "fat": 0.2,
+   "carbs": 7.6,
+   "portion": 300,
+   "imagenet": [],
+   "vision": [
+    "watermelon"
+   ]
+  },
+  {
+   "id": "melon",
+   "name": "Дыня",
+   "calories": 34,
+   "protein": 0.8,
+   "fat": 0.2,
+   "carbs": 8,
+   "portion": 200,
+   "imagenet": [],
+   "vision": [
+    "melon",
+    "cantaloupe"
+   ]
+  },
+  {
+   "id": "pineapple",
+   "name": "Ананас",
+   "calories": 50,
+   "protein": 0.5,
+   "fat": 0.1,
+   "carbs": 13,
+   "portion": 150,
+   "imagenet": [
+    953
+   ],
+   "vision": [
+    "pineapple"
+   ]
+  },
+  {
+   "id": "pomegranate",
+   "name": "Гранат",
+   "calories": 83,
+   "protein": 1.7,
+   "fat": 1.2,
+   "carbs": 19,
+   "portion": 150,
+   "imagenet": [
+    957
+   ],
+   "vision": [
+    "pomegranate"
+   ]
+  },
+  {
+   "id": "fig",
+   "name": "Инжир",
+   "calories": 74,
+   "protein": 0.8,
+   "fat": 0.3,
+   "carbs": 19,
+   "portion": 50,
+   "imagenet": [
+    952
+   ],
+   "vision": [
+    "fig"
+   ]
+  },
+  {
+   "id": "jackfruit",
+   "name": "Джекфрут",
+   "calories": 95,
+   "protein": 1.7,
+   "fat": 0.6,
+   "carbs": 23,
+   "portion": 150,
+   "imagenet": [
+    955
+   ],
+   "vision": [
+    "jackfruit"
+   ]
+  },
+  {
+   "id": "espresso",
+   "name": "Кофе",
+   "calories": 9,
+   "protein": 0.1,
+   "fat": 0.2,
+   "carbs": 1.7,
+   "portion": 150,
+   "imagenet": [
+    967
+   ],
+   "vision": [
+    "coffee",
+    "espresso",
+    "cappuccino",
+    "latte"
+   ]
+  },
+  {
+   "id": "tea",
+   "name": "Чай",
+   "calories": 1,
+   "protein": 0,
+   "fat": 0,
+   "carbs": 0.2,
+   "portion": 250,
+   "imagenet": [],
+   "vision": [
+    "tea"
+   ]
+  },
+  {
+   "id": "juice",
+   "name": "Сок",
+   "calories": 45,
+   "protein": 0.5,
+   "fat": 0.1,
+   "carbs": 10,
+   "portion": 250,
+   "imagenet": [],
+   "vision": [
+    "juice",
+    "orange_juice"
+   ]
+  },
+  {
+   "id": "milk",
+   "name": "Молоко",
+   "calories": 52,
+   "protein": 3,
+   "fat": 2.5,
+   "carbs": 4.7,
+   "portion": 250,
+   "imagenet": [],
+   "vision": [
+    "milk"
+   ]
+  },
+  {
+   "id": "smoothie",
+   "name": "Смузи",
+   "calories": 60,
+   "protein": 1,
+   "fat": 0.5,
+   "carbs": 13,
+   "portion": 300,
+   "imagenet": [],
+   "vision": [
+    "smoothie",
+    "milkshake"
+   ]
+  },
+  {
+   "id": "eggnog",
+   "name": "Гоголь-моголь",
+   "calories": 88,
+   "protein": 4.6,
+   "fat": 4.2,
+   "carbs": 8,
+   "portion": 200,
+   "imagenet": [
+    969
+   ],
+   "vision": [
+    "eggnog"
+   ]
+  },
+  {
+   "id": "wine",
+   "name": "Вино",
+   "calories": 85,
+   "protein": 0.1,
+   "fat": 0,
+   "carbs": 2.6,
+   "portion": 150,
+   "imagenet": [
+    966
+   ],
+   "vision": [
+    "wine",
+    "red_wine",
+    "white_wine"
+   ]
+  },
+  {
+   "id": "beer",
+   "name": "Пиво",
+   "calories": 43,
+   "protein": 0.5,
+   "fat": 0,
+   "carbs": 3.6,
+   "portion": 500,
+   "imagenet": [],
+   "vision": [
+    "beer"
+   ]
+  }
+ ]
+}
