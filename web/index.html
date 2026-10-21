@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Калории</title>
+  <meta name="description" content="Простой счётчик калорий">
+  <meta name="theme-color" content="#f2f2f7" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="icons/icon-192.png" type="image/png">
+  <link rel="apple-touch-icon" href="icons/icon-192.png">
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <header class="topbar">
+    <button class="icon-button" id="goal-button" type="button" aria-label="Дневная цель" title="Дневная цель">🎯</button>
+    <h1>Калории</h1>
+    <button class="icon-button primary" id="add-button" type="button" aria-label="Добавить продукт" title="Добавить продукт">＋</button>
+  </header>
+
+  <main>
+    <section class="card summary">
+      <div class="day-picker">
+        <button class="icon-button" id="prev-day" type="button" aria-label="Предыдущий день">‹</button>
+        <span id="day-title"></span>
+        <button class="icon-button" id="next-day" type="button" aria-label="Следующий день">›</button>
+      </div>
+
+      <div class="ring">
+        <svg viewBox="0 0 200 200" aria-hidden="true">
+          <circle class="ring-track" cx="100" cy="100" r="88"/>
+          <circle class="ring-progress" id="ring-progress" cx="100" cy="100" r="88"/>
+        </svg>
+        <div class="ring-label">
+          <strong id="eaten"></strong>
+          <span id="goal-label"></span>
+          <small id="remaining"></small>
+        </div>
+      </div>
+
+      <div class="macros">
+        <div><strong id="protein" class="protein"></strong><span>Белки</span></div>
+        <div><strong id="fat" class="fat"></strong><span>Жиры</span></div>
+        <div><strong id="carbs" class="carbs"></strong><span>Углеводы</span></div>
+      </div>
+    </section>
+
+    <div id="meals"></div>
+
+    <section class="card empty" id="empty-state" hidden>
+      <div class="empty-icon">🍽️</div>
+      <strong>Пока пусто</strong>
+      <span>Нажмите «＋», чтобы добавить продукт</span>
+    </section>
+  </main>
+
+  <!-- Добавление продукта -->
+  <dialog id="add-dialog">
+    <form id="food-form" method="dialog" novalidate>
+      <header class="dialog-header">
+        <button type="button" class="link-button" data-close>Отмена</button>
+        <h2>Новый продукт</h2>
+        <button type="submit" class="link-button strong" id="save-button" disabled>Добавить</button>
+      </header>
+
+      <div class="dialog-body">
+        <button type="button" class="search-link" id="open-search">🔍 Найти в базе продуктов</button>
+        <p class="hint">Поиск по открытой базе Open Food Facts</p>
+
+        <h3>Продукт</h3>
+        <div class="group">
+          <label class="row"><span>Название</span><input name="name" autocomplete="off" placeholder="Например, гречка"></label>
+          <label class="row"><span>Приём пищи</span><select name="meal"></select></label>
+          <label class="row"><span>Вес порции</span><input name="grams" inputmode="decimal" value="100"><em>г</em></label>
+        </div>
+
+        <h3>На 100 г</h3>
+        <div class="group">
+          <label class="row"><span>Калории</span><input name="calories" inputmode="decimal" placeholder="0"><em>ккал</em></label>
+          <label class="row"><span>Белки</span><input name="protein" inputmode="decimal" placeholder="0"><em>г</em></label>
+          <label class="row"><span>Жиры</span><input name="fat" inputmode="decimal" placeholder="0"><em>г</em></label>
+          <label class="row"><span>Углеводы</span><input name="carbs" inputmode="decimal" placeholder="0"><em>г</em></label>
+        </div>
+
+        <h3>Быстрый выбор</h3>
+        <div class="chips" id="presets"></div>
+
+        <div id="preview" hidden>
+          <h3>Итого за порцию</h3>
+          <div class="group" id="preview-row"></div>
+        </div>
+      </div>
+    </form>
+  </dialog>
+
+  <!-- Поиск по Open Food Facts -->
+  <dialog id="search-dialog">
+    <header class="dialog-header">
+      <button type="button" class="link-button" data-close>‹ Назад</button>
+      <h2>Поиск продукта</h2>
+      <span></span>
+    </header>
+    <div class="dialog-body">
+      <input type="search" id="search-input" placeholder="Например, гречка или йогурт" autocomplete="off">
+      <div id="search-status" class="status"></div>
+      <ul id="search-results" class="group list"></ul>
+    </div>
+  </dialog>
+
+  <!-- Дневная цель -->
+  <dialog id="goal-dialog" class="small">
+    <form method="dialog" id="goal-form">
+      <header class="dialog-header">
+        <span></span>
+        <h2>Цель</h2>
+        <button type="submit" class="link-button strong">Готово</button>
+      </header>
+      <div class="dialog-body">
+        <h3>Дневная норма</h3>
+        <div class="group">
+          <div class="row stepper">
+            <button type="button" class="icon-button" data-step="-50" aria-label="Меньше">−</button>
+            <output id="goal-value"></output>
+            <button type="button" class="icon-button" data-step="50" aria-label="Больше">+</button>
+          </div>
+        </div>
+      </div>
+    </form>
+  </dialog>
+
+  <noscript>Для работы приложения нужен JavaScript.</noscript>
+</body>
+</html>
