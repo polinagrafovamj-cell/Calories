@@ -47,10 +47,9 @@ open CalorieCounter.xcodeproj
 Workflow `.github/workflows/build-ios.yml` собирает приложение на macOS-машине GitHub
 при каждом пуше в `main` (можно запустить и вручную: **Actions → Build iOS → Run workflow**).
 
-- Результат — **неподписанный** `CalorieCounter-unsigned.ipa`, он лежит в разделе
-  **Artifacts** на странице запуска (скачивается zip-архив, внутри — `.ipa`).
-- Если запушить тег вида `v1.0` (`git tag v1.0 && git push origin v1.0`), `.ipa`
-  дополнительно прикрепится к GitHub Release.
+- Результат — **неподписанный** `CalorieCounter.ipa`. Последняя версия всегда доступна
+  по прямой ссылке: https://github.com/polinagrafovamj-cell/Calories/releases/latest/download/CalorieCounter.ipa
+  (а также в разделе **Releases** и в **Artifacts** на странице запуска).
 
 ### Установка на iPhone
 Неподписанный `.ipa` нужно подписать своим Apple ID — проще всего через

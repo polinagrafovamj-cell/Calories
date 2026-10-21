@@ -56,14 +56,14 @@ jobs:
         run: |
           mkdir -p build/Payload
           cp -R "$RUNNER_TEMP/CalorieCounter.xcarchive/Products/Applications/CalorieCounter.app" build/Payload/
-          cd build && zip -qry CalorieCounter-unsigned.ipa Payload
-          ls -lh CalorieCounter-unsigned.ipa
+          cd build && zip -qry CalorieCounter.ipa Payload
+          ls -lh CalorieCounter.ipa
 
       - name: Upload .ipa
         uses: actions/upload-artifact@v4
         with:
           name: CalorieCounter-unsigned-ipa
-          path: build/CalorieCounter-unsigned.ipa
+          path: build/CalorieCounter.ipa
           retention-days: 30
 
       - name: Upload build log on failure
@@ -73,9 +73,17 @@ jobs:
           name: xcodebuild-log
           path: ${{ runner.temp }}/xcodebuild.log
 
+      # Каждая сборка main (или запуск вручную) публикует релиз, поэтому последний файл
+      # всегда доступен по ссылке .../releases/latest/download/CalorieCounter.ipa
       - name: Publish GitHub Release
-        if: startsWith(github.ref, 'refs/tags/v')
+        if: github.event_name != 'pull_request'
         uses: softprops/action-gh-release@v2
         with:
-          files: build/CalorieCounter-unsigned.ipa
-          generate_release_notes: true
+          tag_name: ${{ startsWith(github.ref, 'refs/tags/') && github.ref_name || format('build-{0}', github.run_number) }}
+          name: ${{ startsWith(github.ref, 'refs/tags/') && github.ref_name || format('Сборка {0}', github.run_number) }}
+          target_commitish: ${{ github.sha }}
+          files: build/CalorieCounter.ipa
+          make_latest: true
+          body: |
+            Неподписанная сборка iOS-приложения «Калории».
+            Установка на iPhone — через Sideloadly, см. README.
