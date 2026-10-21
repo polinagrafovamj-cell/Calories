@@ -44,6 +44,14 @@ jobs:
             CODE_SIGN_IDENTITY="" \
             | tee "$RUNNER_TEMP/xcodebuild.log"
 
+      - name: Report compiler errors
+        if: failure()
+        run: |
+          # Выводим ошибки как аннотации, чтобы их было видно на странице запуска
+          grep -E "error:" "$RUNNER_TEMP/xcodebuild.log" | sort -u | head -20 | while IFS= read -r line; do
+            echo "::error::${line}"
+          done
+
       - name: Package .ipa
         run: |
           mkdir -p build/Payload
