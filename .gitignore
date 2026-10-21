@@ -1,0 +1,9 @@
+# Генерируется XcodeGen
+*.xcodeproj/
+# Xcode
+xcuserdata/
+DerivedData/
+build/
+*.ipa
+*.xcarchive
+.DS_Store
