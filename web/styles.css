@@ -104,6 +104,9 @@ main {
 .ring circle { fill: none; stroke-width: 16; }
 .ring-track { stroke: var(--track); }
 .ring-progress {
+  /* Длина окружности 2π·88; до первой отрисовки кольцо пустое */
+  stroke-dasharray: 552.92;
+  stroke-dashoffset: 552.92;
   stroke: var(--green);
   stroke-linecap: round;
   transition: stroke-dashoffset 0.4s ease-out, stroke 0.2s;
@@ -190,7 +193,9 @@ main {
   padding-top: 12px;
   border-top: 1px solid var(--separator);
 }
-.mascot img { flex: none; }
+.mascot figure { flex: none; margin: 0; text-align: center; }
+.mascot img { display: block; }
+.mascot figcaption { color: var(--secondary); font-size: 11px; font-weight: 600; }
 .bubble {
   position: relative;
   margin: 0;

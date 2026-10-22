@@ -167,28 +167,33 @@ private struct MacrosRow: View {
     }
 }
 
-/// Капибара-талисман с репликой в зависимости от того, сколько съедено.
+/// Капибара Санечка — талисман с репликой в зависимости от того, сколько съедено.
 private struct MascotView: View {
     let hasEntries: Bool
     let progress: Double
 
     private var phrase: String {
-        guard hasEntries else { return "Привет! Что сегодня было вкусного?" }
+        guard hasEntries else { return "Привет! Я Санечка. Что сегодня было вкусного?" }
         switch progress {
-        case ..<0.5: return "Хорошее начало. Капибара одобряет!"
+        case ..<0.5: return "Хорошее начало. Санечка одобряет!"
         case ..<0.9: return "Уже больше половины. Так держать!"
-        case ...1: return "Норма набрана — капибара довольна 🍊"
-        default: return "Перебор! Капибара советует прогуляться."
+        case ...1: return "Норма набрана — Санечка в восторге 🍊"
+        default: return "Перебор! Санечка советует прогуляться."
         }
     }
 
     var body: some View {
         HStack(spacing: 12) {
-            Image("Capybara")
-                .resizable()
-                .scaledToFit()
-                .frame(width: 88)
-                .accessibilityHidden(true)
+            VStack(spacing: 2) {
+                Image("Capybara")
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: 88)
+                Text("Санечка")
+                    .font(.caption2.weight(.semibold))
+                    .foregroundStyle(.secondary)
+            }
+            .accessibilityHidden(true)
             Text(phrase)
                 .font(.subheadline)
                 .padding(.horizontal, 12)
