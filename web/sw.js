@@ -1,6 +1,6 @@
 // Service worker: кэширует файлы приложения, чтобы оно открывалось без интернета.
 // При изменении файлов увеличьте версию, чтобы пользователи получили обновление.
-const CACHE = 'calorie-counter-v5';
+const CACHE = 'calorie-counter-v6';
 // Модель распознавания (~14 МБ) не входит в список: она кэшируется при первом использовании.
 const APP_SHELL = [
   './',
@@ -9,7 +9,7 @@ const APP_SHELL = [
   'app.js',
   'food-recognition.js',
   'recognized-foods.json',
-  'capybara.svg',
+  'gopher.svg',
   'manifest.webmanifest',
   'icons/icon-192.png',
   'icons/icon-512.png',

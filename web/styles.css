@@ -112,6 +112,8 @@ main {
   transition: stroke-dashoffset 0.4s ease-out, stroke 0.2s;
 }
 .ring-progress.over { stroke: var(--red); }
+/* Иначе скруглённый край пустой дуги рисуется точкой */
+.ring-progress.empty { stroke-opacity: 0; }
 .ring-label {
   position: absolute;
   inset: 0;
@@ -182,9 +184,9 @@ main {
   text-align: center;
 }
 .empty strong { color: var(--text); }
-.empty-capybara { margin-bottom: 4px; }
+.empty-mascot { margin-bottom: 4px; }
 
-/* Капибара-талисман */
+/* Суслик-талисман */
 .mascot {
   display: flex;
   align-items: center;

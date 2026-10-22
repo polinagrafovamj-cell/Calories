@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 170" role="img" aria-label="Суслик Санечка">
+  <!-- Хвостик -->
+  <ellipse cx="112" cy="148" rx="16" ry="8" fill="#b97f3e" transform="rotate(-30 112 148)"/>
+  <!-- Тело и животик -->
+  <ellipse cx="80" cy="116" rx="38" ry="44" fill="#d9a35f"/>
+  <ellipse cx="80" cy="124" rx="24" ry="32" fill="#f3dcae"/>
+  <!-- Задние лапки -->
+  <ellipse cx="62" cy="160" rx="15" ry="6" fill="#b97f3e"/>
+  <ellipse cx="98" cy="160" rx="15" ry="6" fill="#b97f3e"/>
+  <!-- Ушки -->
+  <circle cx="54" cy="36" r="9" fill="#b97f3e"/>
+  <circle cx="54" cy="37" r="4.5" fill="#e3a49a"/>
+  <circle cx="106" cy="36" r="9" fill="#b97f3e"/>
+  <circle cx="106" cy="37" r="4.5" fill="#e3a49a"/>
+  <!-- Голова -->
+  <ellipse cx="80" cy="60" rx="35" ry="30" fill="#d9a35f"/>
+  <ellipse cx="80" cy="74" rx="19" ry="13" fill="#f3dcae"/>
+  <!-- Глазки с ресничками -->
+  <circle cx="66" cy="54" r="5" fill="#2b1d12"/>
+  <circle cx="67.5" cy="52.5" r="1.7" fill="#ffffff"/>
+  <circle cx="94" cy="54" r="5" fill="#2b1d12"/>
+  <circle cx="95.5" cy="52.5" r="1.7" fill="#ffffff"/>
+  <path d="M61 51 l-4 -3 M62 48 l-2 -4 M99 51 l4 -3 M98 48 l2 -4" stroke="#2b1d12" stroke-width="1.8" stroke-linecap="round"/>
+  <!-- Носик, ротик и зубки -->
+  <ellipse cx="80" cy="67" rx="5" ry="3.5" fill="#5a3a22"/>
+  <path d="M80 70 v4 M73 74 q3.5 4 7 0 q3.5 4 7 0" fill="none" stroke="#5a3a22" stroke-width="2" stroke-linecap="round"/>
+  <rect x="77" y="77" width="6" height="6" rx="1.5" fill="#ffffff" stroke="#e0cfb0" stroke-width="0.8"/>
+  <!-- Щёчки -->
+  <ellipse cx="56" cy="70" rx="7" ry="4.5" fill="#ef8f86" opacity="0.5"/>
+  <ellipse cx="104" cy="70" rx="7" ry="4.5" fill="#ef8f86" opacity="0.5"/>
+  <!-- Бантик -->
+  <g transform="translate(100 28) rotate(20)">
+    <path d="M0 0 L-13 -8 Q-17 0 -13 8 Z" fill="#ff6fa8"/>
+    <path d="M0 0 L13 -8 Q17 0 13 8 Z" fill="#ff6fa8"/>
+    <circle r="4" fill="#e24d8c"/>
+  </g>
+  <!-- Мандарин в лапках -->
+  <circle cx="80" cy="104" r="15" fill="#ff9a1f"/>
+  <circle cx="75" cy="99" r="4" fill="#ffc06b"/>
+  <path d="M80 89 q2 -7 11 -7 q-2 8 -11 7z" fill="#3fa34d"/>
+  <ellipse cx="66" cy="107" rx="7" ry="9" fill="#c48a48"/>
+  <ellipse cx="94" cy="107" rx="7" ry="9" fill="#c48a48"/>
+</svg>

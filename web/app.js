@@ -178,6 +178,7 @@ function render() {
   ring.style.strokeDasharray = RING_LENGTH;
   ring.style.strokeDashoffset = RING_LENGTH * (1 - Math.min(progress, 1));
   ring.classList.toggle('over', progress > 1);
+  ring.classList.toggle('empty', progress <= 0);
 
   const remaining = goal - sum.calories;
   $('#eaten').textContent = round(sum.calories);
@@ -226,7 +227,7 @@ function render() {
   $('#empty-state').hidden = entries.length > 0;
 }
 
-/** Реплика капибары Санечки в зависимости от того, сколько съедено. */
+/** Реплика суслика Санечки в зависимости от того, сколько съедено. */
 function mascotPhrase(count, progress) {
   if (count === 0) return 'Привет! Я Санечка. Что сегодня было вкусного?';
   if (progress < 0.5) return 'Хорошее начало. Санечка одобряет!';

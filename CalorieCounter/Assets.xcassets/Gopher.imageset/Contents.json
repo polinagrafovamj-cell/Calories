@@ -1,6 +1,6 @@
 {
   "images" : [
-    { "filename" : "capybara.svg", "idiom" : "universal" }
+    { "filename" : "gopher.svg", "idiom" : "universal" }
   ],
   "info" : { "author" : "xcode", "version" : 1 },
   "properties" : { "preserves-vector-representation" : true }

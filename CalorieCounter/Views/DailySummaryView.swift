@@ -45,10 +45,10 @@ struct DailySummaryView: View {
                     Section {
                         ContentUnavailableView {
                             VStack(spacing: 8) {
-                                Image("Capybara")
+                                Image("Gopher")
                                     .resizable()
                                     .scaledToFit()
-                                    .frame(width: 140)
+                                    .frame(width: 100)
                                 Text("Пока пусто")
                             }
                         } description: {
@@ -167,7 +167,7 @@ private struct MacrosRow: View {
     }
 }
 
-/// Капибара Санечка — талисман с репликой в зависимости от того, сколько съедено.
+/// Суслик Санечка — талисман с репликой в зависимости от того, сколько съедено.
 private struct MascotView: View {
     let hasEntries: Bool
     let progress: Double
@@ -185,10 +185,10 @@ private struct MascotView: View {
     var body: some View {
         HStack(spacing: 12) {
             VStack(spacing: 2) {
-                Image("Capybara")
+                Image("Gopher")
                     .resizable()
                     .scaledToFit()
-                    .frame(width: 88)
+                    .frame(width: 64)
                 Text("Санечка")
                     .font(.caption2.weight(.semibold))
                     .foregroundStyle(.secondary)
