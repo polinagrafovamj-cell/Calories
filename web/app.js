@@ -230,8 +230,8 @@ function render() {
 function mascotPhrase(count, progress) {
   if (count === 0) return 'Привет! Я Санечка. Что сегодня было вкусного?';
   if (progress < 0.5) return 'Хорошее начало. Санечка одобряет!';
-  if (progress < 0.9) return 'Уже больше половины. Так держать!';
-  if (progress <= 1) return 'Норма набрана — Санечка в восторге 🍊';
+  if (progress < 0.9) return 'Уже больше половины. Санечка гордится тобой!';
+  if (progress <= 1) return 'Норма набрана — Санечка довольна 🍊';
   return 'Перебор! Санечка советует прогуляться.';
 }
 

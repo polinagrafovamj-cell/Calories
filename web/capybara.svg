@@ -20,9 +20,16 @@
   <!-- Глаз и румянец -->
   <circle cx="80" cy="76" r="6" fill="#2b1d12"/>
   <circle cx="82" cy="74" r="2" fill="#ffffff"/>
+  <path d="M80 70 l1 -5 M84 71 l3 -4 M76 71 l-2 -4" stroke="#2b1d12" stroke-width="2" stroke-linecap="round"/>
   <ellipse cx="86" cy="98" rx="9" ry="5" fill="#e8907a" opacity="0.55"/>
   <!-- Мандарин на голове -->
   <circle cx="72" cy="42" r="16" fill="#ff9a1f"/>
   <circle cx="67" cy="37" r="4" fill="#ffc06b"/>
   <path d="M72 26 q3 -8 12 -8 q-2 9 -12 8z" fill="#3fa34d"/>
+  <!-- Бантик -->
+  <g transform="translate(100 44) rotate(-15)">
+    <path d="M0 0 L-15 -9 Q-19 0 -15 9 Z" fill="#ff6fa8"/>
+    <path d="M0 0 L15 -9 Q19 0 15 9 Z" fill="#ff6fa8"/>
+    <circle r="4.5" fill="#e24d8c"/>
+  </g>
 </svg>
